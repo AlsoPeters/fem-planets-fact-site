@@ -17,6 +17,10 @@ module.exports = {
         green: '#1EC1A2',
         blue: '#2D68F0',
       },
+      fontFamily: {
+        antonio: ['Antonio', 'sans-serif'],
+        spartan: ['Spartan', 'sans-serif'],
+      },
     },
   },
   plugins: [],
