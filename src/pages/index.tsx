@@ -20,7 +20,7 @@ const Home: NextPage = () => {
         alt='background stars'
       />
       <Nav />
-      <main>Main</main>
+      <main className='text-white'>Main</main>
     </>
   );
 };
