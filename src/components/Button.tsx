@@ -15,7 +15,7 @@ export default function Button() {
   return (
     <button onClick={() => setWasClicked(!wasClicked)} className={buttonStyle}>
       <div className='text-gray px-8'>01</div>
-      <div className='text-white font-bold'>{`${wasClicked}`}</div>
+      <div className='text-white font-bold'>BUTTON</div>
     </button>
   );
 }

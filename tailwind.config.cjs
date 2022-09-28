@@ -3,6 +3,9 @@ module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      backgroundImage: {
+        'background-stars': "url('/assets/background-stars.svg')",
+      },
       colors: {
         white: '#ffffff',
         black: '#070724',
