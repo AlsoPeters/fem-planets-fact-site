@@ -2,18 +2,21 @@ import React, { useState } from 'react';
 import classNames from 'classnames';
 
 export default function Button() {
-  const [wasClicked, setWasClicked] = useState(false);
+  const [toggleActive, setToggleActive] = useState(false);
 
   const defaultStyle =
     'bg-blue-light border-2 border-blue-light flex items-center w-[350px] h-12 leading-[11px]';
 
   const buttonStyle = classNames(defaultStyle, {
     'bg-black border-2 border-gray-dark flex items-center w-[350px] h-12 leading-[11px] hover:bg-gray-dark':
-      !wasClicked,
+      !toggleActive,
   });
 
   return (
-    <button onClick={() => setWasClicked(!wasClicked)} className={buttonStyle}>
+    <button
+      onClick={() => setToggleActive(!toggleActive)}
+      className={buttonStyle}
+    >
       <div className='text-gray px-8'>01</div>
       <div className='text-white font-bold'>BUTTON</div>
     </button>

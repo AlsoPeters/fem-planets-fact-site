@@ -1,10 +1,17 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import Image from 'next/image';
+import Link from 'next/link';
+import fsPromises from 'fs/promises';
+import path from 'path';
+
 import Button from '../components/Button';
 import Nav from '../components/Nav';
-import Image from 'next/image';
+import InfoMenu from '../components/InfoMenu';
+import PlanetImage from '../components/PlanetImage';
+import PlanetOverview from '../components/PlanetOverview';
 
-const Home: NextPage = () => {
+export default function NextPage(): JSX.Element {
   return (
     <>
       <Head>
@@ -19,13 +26,15 @@ const Home: NextPage = () => {
         objectPosition='center'
         alt='background stars'
       />
-      <Nav />
-      <main className='text-white'>Main</main>
+      <main className='text-white flex flex-col'>
+        <PlanetImage />
+        <PlanetOverview />
+
+        <div className='text-white'></div>
+      </main>
     </>
   );
-};
-
-export default Home;
+}
 
 // type TechnologyCardProps = {
 //   name: string;
