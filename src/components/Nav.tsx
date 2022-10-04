@@ -8,12 +8,14 @@ export default function Nav(): JSX.Element {
         THE PLANETS
       </h2>
       <div>
-        <Image
-          src='/assets/icon-hamburger.svg'
-          width={24}
-          height={17}
-          alt='background stars'
-        />
+        <div>
+          <Image
+            src='/assets/icon-hamburger.svg'
+            width={24}
+            height={17}
+            alt='background stars'
+          />
+        </div>
       </div>
     </div>
   );

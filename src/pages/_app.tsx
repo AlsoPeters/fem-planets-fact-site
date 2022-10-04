@@ -8,7 +8,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
   return (
     <>
       <Nav />
-      {/* <MobileMenu /> */}
+      <MobileMenu />
       <InfoMenu />
       <Component {...pageProps} />;
     </>

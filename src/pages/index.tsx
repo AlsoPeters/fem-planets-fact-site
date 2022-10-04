@@ -29,8 +29,6 @@ export default function NextPage(): JSX.Element {
       <main className='text-white flex flex-col'>
         <PlanetImage />
         <PlanetOverview />
-
-        <div className='text-white'></div>
       </main>
     </>
   );
