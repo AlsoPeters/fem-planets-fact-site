@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'background-stars': "url('/assets/background-stars.svg')",
+        'background-stars': "url('/assets/bg-stars.svg')",
       },
       colors: {
         white: '#ffffff',
