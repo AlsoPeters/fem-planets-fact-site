@@ -3,13 +3,14 @@ import { mobileMenuLinks } from '../utils/data';
 import Link from 'next/link';
 import Image from 'next/image';
 
-export default function MobileMenu(): JSX.Element {
+export default function MobileMenu({ toggle }): JSX.Element {
   return (
     <div className='flex flex-col items-stretch text-white z-10 bg-black  absolute w-full px-6 font-spartan'>
       <div>
         {mobileMenuLinks.map((planets, index) => {
           return (
             <div
+              onClick={toggle}
               className='border-2 border-black border-b-gray-dark py-4'
               key={index}
             >

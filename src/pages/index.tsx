@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import data from '../utils/data.json';
 
 export default function NextPage(): JSX.Element {
   return (
@@ -10,7 +11,11 @@ export default function NextPage(): JSX.Element {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <main className='text-white flex flex-col'>heh</main>
+      <main className='text-white flex flex-col'>
+        {data.map((planet) => (
+          <div key={planet.name}>{planet.name}</div>
+        ))}
+      </main>
     </div>
   );
 }
