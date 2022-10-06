@@ -7,12 +7,13 @@ export default function mercury(props): JSX.Element {
   console.log(props);
 
   return (
-    <div className='text-white px-6 flex flex-col items-center'>
-      <div className='flex justify-center my-16'>
+    <div className='text-white gap-2 px-6 flex flex-col items-center'>
+      <div className='flex justify-center items-center h-80 w-full'>
         <Image
           width={props.planetData.images.image_size}
           height={props.planetData.images.image_size}
           src={props.planetData.images.planet}
+          layout='fixed'
           alt='planet-image'
         />
       </div>
@@ -20,10 +21,10 @@ export default function mercury(props): JSX.Element {
       <div className='font-antonio text-[40px]'>
         {props.planetData.name.toUpperCase()}
       </div>
-      <p className='font-spartan text-gray text-sm'>
+      <p className='font-spartan text-center h-28 text-gray text-sm'>
         {props.planetData.overview.content}
       </p>
-      <div>
+      <div className='mb-4'>
         Source:{' '}
         <a
           target='_blank'
@@ -33,9 +34,41 @@ export default function mercury(props): JSX.Element {
           Wikipedia
         </a>
       </div>
-      <div className='border-gray flex justify-between items-center border-2 w-full py-2 px-4 text-sm'>
-        <div className='font-spartan font-bold text-xs'>ROTATIONS TIME</div>
-        <div className='font-antonio text-xl'>{props.planetData.rotation}</div>
+
+      <div className='w-full flex flex-col gap-2'>
+        <div className='border-gray-dark flex justify-between items-center border-2 w-full py-2 px-4 text-sm'>
+          <div className='font-spartan text-gray-dark font-bold text-xs'>
+            ROTATIONS TIME
+          </div>
+          <div className='font-antonio text-xl'>
+            {props.planetData.rotation}
+          </div>
+        </div>
+
+        <div className='border-gray-dark flex justify-between items-center border-2 w-full py-2 px-4 text-sm'>
+          <div className='font-spartan text-gray-dark font-bold text-xs'>
+            REVOLUTION TIME
+          </div>
+          <div className='font-antonio text-xl'>
+            {props.planetData.revolution}
+          </div>
+        </div>
+
+        <div className='border-gray-dark flex justify-between items-center border-2 w-full py-2 px-4 text-sm'>
+          <div className='font-spartan text-gray-dark font-bold text-xs'>
+            RADIUS
+          </div>
+          <div className='font-antonio text-xl'>{props.planetData.radius}</div>
+        </div>
+
+        <div className='border-gray-dark flex justify-between items-center border-2 w-full py-2 px-4 text-sm'>
+          <div className='font-spartan text-gray-dark font-bold text-xs'>
+            AVERAGE TEMP.
+          </div>
+          <div className='font-antonio text-xl'>
+            {props.planetData.temperature}
+          </div>
+        </div>
       </div>
     </div>
   );
