@@ -8,8 +8,8 @@ export default function PlanetOverview(): JSX.Element {
       <p className=' font-spartan text-center text-sm text-gray'>
         Mercury is the smallest planet in the Solar System and the closest to
         the Sun. Its orbit around the Sun takes 87.97 Earth days, the shortest
-        of all the Sun's planets. Mercury is one of four terrestrial planets in
-        the Solar System, and is a rocky body like Earth.
+        of all the Sun&apos;s planets. Mercury is one of four terrestrial
+        planets in the Solar System, and is a rocky body like Earth.
       </p>
       <div className='my-6'>Source: Wikipedia</div>
       <div className='gap-2 flex flex-col'>
