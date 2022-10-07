@@ -3,7 +3,7 @@ import { mobileMenuLinks } from '../utils/data';
 import Link from 'next/link';
 import Image from 'next/image';
 
-export default function MobileMenu({ toggle }): JSX.Element {
+export default function MobileMenu({ toggle }: MobileMenuProps): JSX.Element {
   return (
     <div className='flex flex-col items-stretch text-white z-10 bg-black  absolute w-full px-6 font-spartan'>
       <div>
@@ -39,4 +39,8 @@ export default function MobileMenu({ toggle }): JSX.Element {
       </div>
     </div>
   );
+}
+
+interface MobileMenuProps {
+  toggle: () => void;
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-export default function Nav({ toggle }): JSX.Element {
+export default function Nav({ toggle }: NavProps): JSX.Element {
   return (
     <div className='flex justify-between px-6 py-4 border-b-2 border-gray-dark items-center '>
       <h2 className='text-white text-3xl leading-[52px] -tracking-[1.5px] font-antonio'>
@@ -20,4 +20,8 @@ export default function Nav({ toggle }): JSX.Element {
       </div>
     </div>
   );
+}
+
+interface NavProps {
+  toggle: () => void;
 }

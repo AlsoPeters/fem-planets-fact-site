@@ -9,7 +9,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
   const [showMenu, setShowMenu] = useState(false);
   const [infoMenuSelection, setInfoMenuSelection] = useState('overview');
 
-  function toggleMenu() {
+  function toggleMenu(): void {
     setShowMenu(!showMenu);
     console.log('i toggled');
   }

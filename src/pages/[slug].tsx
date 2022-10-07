@@ -3,7 +3,7 @@ import React from 'react';
 import data from '../utils/data.json';
 import Image from 'next/image';
 
-export default function mercury(props): JSX.Element {
+export default function mercury(props: Props): JSX.Element {
   console.log(props);
 
   return (
@@ -88,9 +88,38 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
 
   return {
     props: {
-      dick: 'balls',
       slug: params?.slug,
       planetData,
     },
   };
 };
+
+interface Props {
+  slug: string;
+  planetData: {
+    name: string;
+    overview: {
+      content: string;
+      source: string;
+    };
+    structure: {
+      content: string;
+      source: string;
+    };
+    geology: {
+      content: string;
+      source: string;
+      image: string;
+    };
+    images: {
+      planet: string;
+      internal: string;
+      geology: string;
+      image_size: number;
+    };
+    rotation: string;
+    revolution: string;
+    radius: string;
+    temperature: string;
+  };
+}

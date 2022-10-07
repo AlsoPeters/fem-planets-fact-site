@@ -1,6 +1,5 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import data from '../utils/data.json';
 
 export default function NextPage(): JSX.Element {
   return (
