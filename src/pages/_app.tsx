@@ -11,18 +11,14 @@ const MyApp: AppType = ({ Component, pageProps }) => {
 
   function toggleMenu(): void {
     setShowMenu(!showMenu);
-    console.log('i toggled');
-  }
-
-  function setMenu(menu: string) {
-    setInfoMenuSelection(menu);
+    console.log('i toggled the mobile menu');
   }
 
   return (
     <div className='text-white bg-no-repeat bg-contain h-screen w-screen bg-background-stars'>
       <Nav toggle={toggleMenu} />
       {showMenu && <MobileMenu toggle={toggleMenu} />}
-      <InfoMenu setMenu={setMenu} selected={infoMenuSelection} />
+      <InfoMenu setMenu={setInfoMenuSelection} selected={infoMenuSelection} />
       <Component {...pageProps} />
     </div>
   );

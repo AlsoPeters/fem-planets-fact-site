@@ -25,3 +25,9 @@
     font-style: bold;
   }
 }
+
+@layer components {
+  .activeStyle {
+    border-color: rgb(65 158 187);
+  }
+}
