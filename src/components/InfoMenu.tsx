@@ -12,7 +12,7 @@ export default function InfoMenu({ setMenu, selected }: Props): JSX.Element {
         OVERVIEW
         <div
           className={classNames(defaultStyle, {
-            // See [activeStyle](#activeStyle) for more info
+            // See [activeStyle](global.css .activeStyle) for more info
             activeStyle: selected === 'overview',
           })}
         ></div>
