@@ -28,6 +28,7 @@
 
 @layer components {
   .activeStyle {
-    border-color: rgb(65 158 187);
+    border-color: #419ebb;
+    display: block;
   }
 }
