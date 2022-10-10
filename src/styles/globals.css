@@ -25,10 +25,3 @@
     font-style: bold;
   }
 }
-
-@layer components {
-  .activeStyle {
-    border-color: #419ebb;
-    display: block;
-  }
-}

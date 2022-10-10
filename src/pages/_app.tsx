@@ -19,7 +19,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
       <Nav toggle={toggleMenu} />
       {showMenu && <MobileMenu toggle={toggleMenu} />}
       <InfoMenu setMenu={setInfoMenuSelection} selected={infoMenuSelection} />
-      <Component {...pageProps} />
+      <Component selectedInfoMenuItem={infoMenuSelection} {...pageProps} />
     </div>
   );
 };

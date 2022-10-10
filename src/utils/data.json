@@ -22,7 +22,8 @@
       "internal": "/assets/planet-mercury-internal.svg",
       "geology": "/assets/geology-mercury.png",
       "image_size": "111"
-    }
+    },
+    "color": "#EDA249"
   },
   {
     "name": "Venus",

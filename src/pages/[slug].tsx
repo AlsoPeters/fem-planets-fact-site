@@ -12,17 +12,36 @@ export default function mercury(props: Props): JSX.Element {
         <Image
           width={props.planetData.images.image_size}
           height={props.planetData.images.image_size}
-          src={props.planetData.images.planet}
+          src={
+            props.selectedInfoMenuItem === 'structure'
+              ? props.planetData.images.internal
+              : props.planetData.images.planet
+          }
           layout='fixed'
           alt='planet-image'
         />
+        {props.selectedInfoMenuItem === 'surface' ? (
+          <div className='absolute translate-y-20'>
+            <Image
+              src={props.planetData.images.geology}
+              width={163 / 2}
+              height={199 / 2}
+              layout='fixed'
+              alt='planet-geology'
+            />
+          </div>
+        ) : null}
       </div>
 
       <div className='font-antonio text-[40px]'>
         {props.planetData.name.toUpperCase()}
       </div>
       <p className='font-spartan text-center h-28 text-gray text-sm'>
-        {props.planetData.overview.content}
+        {props.selectedInfoMenuItem === 'structure'
+          ? props.planetData.geology.content
+          : props.selectedInfoMenuItem === 'surface'
+          ? props.planetData.structure.content
+          : props.planetData.overview.content}
       </p>
       <div className='mb-4'>
         Source:{' '}
@@ -122,4 +141,5 @@ interface Props {
     radius: string;
     temperature: string;
   };
+  selectedInfoMenuItem: string;
 }

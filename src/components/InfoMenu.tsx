@@ -1,8 +1,9 @@
 import React from 'react';
+import { mobileMenuLinks } from '../utils/data';
 
 export default function InfoMenu({ setMenu, selected }: Props): JSX.Element {
   const defaultStyle = 'border-2 translate-y-4 opacity-0';
-  const activeStyle = 'border-2 border-blue-light translate-y-4';
+  const activeStyle = `border-2 translate-y-4`;
 
   return (
     <div className='flex justify-between items-center px-6 py-4 border-b border-gray-dark font-spartan text-gray'>
