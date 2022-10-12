@@ -22,17 +22,33 @@ export default function mercury(props: Props): JSX.Element {
       <PlanetMenu />
       <div className='text-white gap-2 px-6 flex flex-col items-center'>
         <div className='flex justify-center items-center h-80 w-full'>
-          <Image
-            width={props.planetData.images.image_size}
-            height={props.planetData.images.image_size}
-            src={
-              props.selectedInfoMenuItem === 'structure'
-                ? props.planetData.images.internal
-                : props.planetData.images.planet
-            }
-            layout='fixed'
-            alt='planet-image'
-          />
+          <div className='md:hidden'>
+            <Image
+              width={props.planetData.images.image_size}
+              height={props.planetData.images.image_size}
+              src={
+                props.selectedInfoMenuItem === 'structure'
+                  ? props.planetData.images.internal
+                  : props.planetData.images.planet
+              }
+              layout='fixed'
+              alt='planet-image'
+            />
+          </div>
+          <div className='hidden md:block'>
+            <Image
+              width={props.planetData.images.image_size_lg}
+              height={props.planetData.images.image_size_lg}
+              src={
+                props.selectedInfoMenuItem === 'structure'
+                  ? props.planetData.images.internal
+                  : props.planetData.images.planet
+              }
+              layout='fixed'
+              alt='planet-image'
+            />
+          </div>
+
           {props.selectedInfoMenuItem === 'surface' ? (
             <div className='absolute translate-y-20'>
               <Image
@@ -152,6 +168,7 @@ export interface Props {
       internal: string;
       geology: string;
       image_size: number;
+      image_size_lg: number;
     };
     rotation: string;
     revolution: string;
