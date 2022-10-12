@@ -21,7 +21,7 @@ export const mobileMenuLinks = [
   },
   {
     name: 'JUPITER',
-    color: 'bg-orange-200',
+    color: 'bg-orange-100',
     path: '/jupiter',
   },
   {
@@ -40,14 +40,3 @@ export const mobileMenuLinks = [
     path: '/neptune',
   },
 ];
-
-{
-  /* <MobileMenuItem planet='MERCURY' color='bg-white' />
-      <MobileMenuItem planet='VENUS' color='bg-yellow' />
-      <MobileMenuItem planet='EARTH' color='bg-blue' />
-      <MobileMenuItem planet='MARS' color='bg-orange-100' />
-      <MobileMenuItem planet='JUPITER' color='bg-orange-200' />
-      <MobileMenuItem planet='SATURN' color='bg-yellow' />
-      <MobileMenuItem planet='URANUS' color='bg-green' />
-      <MobileMenuItem planet='NEPTUNE' color='bg-blue-light' /> */
-}

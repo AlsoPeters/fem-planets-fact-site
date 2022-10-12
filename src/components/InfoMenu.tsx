@@ -8,28 +8,28 @@ export default function InfoMenu({
   // Tailwind does not support Dynamic Classes so i created a config to name the colors requested.
   const colorConfig: ColorConfigProps = {
     Mercury: {
-      color: 'border-white',
+      color: 'border-blue-light',
     },
     Venus: {
       color: 'border-yellow',
     },
     Earth: {
-      color: 'border-blue',
+      color: 'border-purple',
     },
     Mars: {
       color: 'border-orange-200',
     },
     Jupiter: {
-      color: 'border-orange-200',
+      color: 'border-orange-300',
     },
     Saturn: {
-      color: 'border-yellow',
+      color: 'border-orange-100',
     },
     Uranus: {
       color: 'border-green',
     },
     Neptune: {
-      color: 'border-blue-light',
+      color: 'border-blue',
     },
   };
 
