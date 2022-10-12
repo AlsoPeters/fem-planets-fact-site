@@ -12,7 +12,7 @@ export const mobileMenuLinks = [
   {
     name: 'EARTH',
     color: 'bg-blue',
-    path: '/earth',
+    path: 'earth',
   },
   {
     name: 'MARS',
