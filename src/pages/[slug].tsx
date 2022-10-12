@@ -4,6 +4,7 @@ import data from '../utils/data.json';
 import Image from 'next/image';
 
 import InfoMenu from '../components/InfoMenu';
+import PlanetMenu from '../components/PlanetMenu';
 
 export default function mercury(props: Props): JSX.Element {
   console.log(props);
@@ -12,11 +13,13 @@ export default function mercury(props: Props): JSX.Element {
 
   return (
     <div>
+      {/* InfoMenu will be hidden on screen sizes md(768px) and above        */}
       <InfoMenu
         planetName={planetName}
         setMenu={props.setMenu}
         selected={props.selected}
       />
+      <PlanetMenu />
       <div className='text-white gap-2 px-6 flex flex-col items-center'>
         <div className='flex justify-center items-center h-80 w-full'>
           <Image
