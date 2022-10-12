@@ -1,7 +1,6 @@
 import '../styles/globals.css';
 import type { AppType } from 'next/dist/shared/lib/utils';
 import Nav from '../components/Nav';
-import InfoMenu from '../components/InfoMenu';
 import { useState } from 'react';
 import MobileMenu from '../components/MobileMenu';
 
@@ -18,8 +17,12 @@ const MyApp: AppType = ({ Component, pageProps }) => {
     <div className='text-white bg-no-repeat bg-contain h-screen w-screen bg-background-stars'>
       <Nav toggle={toggleMenu} />
       {showMenu && <MobileMenu toggle={toggleMenu} />}
-      <InfoMenu setMenu={setInfoMenuSelection} selected={infoMenuSelection} />
-      <Component selectedInfoMenuItem={infoMenuSelection} {...pageProps} />
+      <Component
+        setMenu={setInfoMenuSelection}
+        selected={infoMenuSelection}
+        selectedInfoMenuItem={infoMenuSelection}
+        {...pageProps}
+      />
     </div>
   );
 };

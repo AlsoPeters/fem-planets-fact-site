@@ -10,7 +10,7 @@ export default function NextPage(): JSX.Element {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <main className='text-white flex flex-col'></main>
+      <main className='text-white flex flex-col'>heh</main>
     </div>
   );
 }
