@@ -6,6 +6,7 @@ import Image from 'next/image';
 import InfoMenu from '../components/InfoMenu';
 import PlanetMenu from '../components/PlanetMenu';
 import Button from '../components/Button';
+import LargeInfoMenu from '../components/LargeInfoMenu';
 
 export default function mercury(props: Props): JSX.Element {
   console.log(props);
@@ -87,12 +88,16 @@ export default function mercury(props: Props): JSX.Element {
                 </a>
               </div>
             </div>
-
-            <div className='justify-around md:flex flex-col py-4 w-1/2 pl-8 hidden'>
+            <LargeInfoMenu
+              planetName={planetName}
+              setMenu={props.setMenu}
+              selected={props.selected}
+            />
+            {/* <div className='justify-around md:flex flex-col py-4 w-1/2 pl-8 hidden'>
               <Button number={'01'} name={'OVERVIEW'} />
               <Button number={'02'} name={'INTERNAL STRUCTURE'} />
-              <Button number={'03'} name={'SURFACE GEOLOGY'} />
-            </div>
+              <Button number={'03'} name={'SURFACE GEOLOGY'} /> */}
+            {/* </div> */}
           </div>
 
           <div className='w-full flex flex-col gap-2 md:flex-row md:items-end'>
