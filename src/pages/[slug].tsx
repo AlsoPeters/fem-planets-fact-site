@@ -54,13 +54,24 @@ export default function mercury(props: Props): JSX.Element {
 
           {props.selectedInfoMenuItem === 'surface' ? (
             <div className='absolute translate-y-20'>
-              <Image
-                src={props.planetData.images.geology}
-                width={163 / 2}
-                height={199 / 2}
-                layout='fixed'
-                alt='planet-geology'
-              />
+              <div className='md:hidden'>
+                <Image
+                  src={props.planetData.images.geology}
+                  width={163 / 2}
+                  height={199 / 2}
+                  layout='fixed'
+                  alt='planet-geology'
+                />
+              </div>
+              <div className='absolute -translate-x-20 -translate-y-16 hidden md:block'>
+                <Image
+                  src={props.planetData.images.geology}
+                  width={163}
+                  height={199}
+                  layout='fixed'
+                  alt='planet-geology'
+                />
+              </div>
             </div>
           ) : null}
         </div>
@@ -93,11 +104,6 @@ export default function mercury(props: Props): JSX.Element {
               setMenu={props.setMenu}
               selected={props.selected}
             />
-            {/* <div className='justify-around md:flex flex-col py-4 w-1/2 pl-8 hidden'>
-              <Button number={'01'} name={'OVERVIEW'} />
-              <Button number={'02'} name={'INTERNAL STRUCTURE'} />
-              <Button number={'03'} name={'SURFACE GEOLOGY'} /> */}
-            {/* </div> */}
           </div>
 
           <div className='w-full flex flex-col gap-2 md:flex-row md:items-end'>
