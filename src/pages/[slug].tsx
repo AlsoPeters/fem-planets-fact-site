@@ -5,7 +5,6 @@ import Image from 'next/image';
 
 import InfoMenu from '../components/InfoMenu';
 import PlanetMenu from '../components/PlanetMenu';
-import Button from '../components/Button';
 import LargeInfoMenu from '../components/LargeInfoMenu';
 
 export default function mercury(props: Props): JSX.Element {
@@ -16,14 +15,19 @@ export default function mercury(props: Props): JSX.Element {
   return (
     <div>
       {/* InfoMenu will be hidden on screen sizes md(768px) and above  */}
-      <InfoMenu
-        planetName={planetName}
-        setMenu={props.setMenu}
-        selected={props.selected}
-      />
-      <PlanetMenu />
-      <div className='text-white gap-2 px-6 flex flex-col items-center'>
-        <div className='flex justify-center items-center h-80 md:h-auto md:py-8 w-full'>
+      <div className='md:hidden'>
+        <InfoMenu
+          planetName={planetName}
+          setMenu={props.setMenu}
+          selected={props.selected}
+        />
+      </div>
+
+      <div className='xl:hidden'>
+        <PlanetMenu />
+      </div>
+      <div className='flex flex-col items-center gap-2 px-6 text-white'>
+        <div className='flex items-center justify-center w-full h-80 md:h-auto md:py-8'>
           <div className='md:hidden'>
             <Image
               width={props.planetData.images.image_size}
@@ -63,7 +67,7 @@ export default function mercury(props: Props): JSX.Element {
                   alt='planet-geology'
                 />
               </div>
-              <div className='absolute -translate-x-20 -translate-y-16 hidden md:block'>
+              <div className='absolute hidden -translate-x-20 -translate-y-16 md:block'>
                 <Image
                   src={props.planetData.images.geology}
                   width={163}
@@ -81,7 +85,7 @@ export default function mercury(props: Props): JSX.Element {
               <div className='font-antonio text-[40px]'>
                 {props.planetData.name.toUpperCase()}
               </div>
-              <p className='font-spartan md:text-left text-center h-28 text-gray text-sm'>
+              <p className='text-sm text-center font-spartan md:text-left h-28 text-gray'>
                 {props.selectedInfoMenuItem === 'structure'
                   ? props.planetData.geology.content
                   : props.selectedInfoMenuItem === 'surface'
@@ -106,39 +110,39 @@ export default function mercury(props: Props): JSX.Element {
             />
           </div>
 
-          <div className='w-full flex flex-col gap-2 md:flex-row md:items-end lg:pb-0 pb-8'>
-            <div className='md:flex-col md:items-start border-gray-dark flex justify-between items-center border-2 w-full py-2 px-4 text-sm'>
-              <div className='font-spartan text-gray-dark font-bold text-xs'>
+          <div className='flex flex-col w-full gap-2 pb-8 md:flex-row md:items-end lg:pb-0'>
+            <div className='flex items-center justify-between w-full px-4 py-2 text-sm border-2 md:flex-col md:items-start border-gray-dark'>
+              <div className='text-xs font-bold font-spartan text-gray-dark'>
                 ROTATIONS TIME
               </div>
-              <div className='font-antonio text-xl'>
+              <div className='text-xl font-antonio'>
                 {props.planetData.rotation}
               </div>
             </div>
 
-            <div className='border-gray-dark md:items-start md:flex-col flex justify-between items-center border-2 w-full py-2 px-4 text-sm'>
-              <div className='font-spartan text-gray-dark font-bold text-xs'>
+            <div className='flex items-center justify-between w-full px-4 py-2 text-sm border-2 border-gray-dark md:items-start md:flex-col'>
+              <div className='text-xs font-bold font-spartan text-gray-dark'>
                 REVOLUTION TIME
               </div>
-              <div className='font-antonio text-xl'>
+              <div className='text-xl font-antonio'>
                 {props.planetData.revolution}
               </div>
             </div>
 
-            <div className='border-gray-dark md:items-start md:flex-col flex justify-between items-center border-2 w-full py-2 px-4 text-sm'>
-              <div className='font-spartan text-gray-dark font-bold text-xs'>
+            <div className='flex items-center justify-between w-full px-4 py-2 text-sm border-2 border-gray-dark md:items-start md:flex-col'>
+              <div className='text-xs font-bold font-spartan text-gray-dark'>
                 RADIUS
               </div>
-              <div className='font-antonio text-xl'>
+              <div className='text-xl font-antonio'>
                 {props.planetData.radius}
               </div>
             </div>
 
-            <div className='border-gray-dark md:items-start md:flex-col flex justify-between items-center border-2 w-full py-2 px-4 text-sm'>
-              <div className='font-spartan text-gray-dark font-bold text-xs'>
+            <div className='flex items-center justify-between w-full px-4 py-2 text-sm border-2 border-gray-dark md:items-start md:flex-col'>
+              <div className='text-xs font-bold font-spartan text-gray-dark'>
                 AVERAGE TEMP.
               </div>
-              <div className='font-antonio text-xl'>
+              <div className='text-xl font-antonio'>
                 {props.planetData.temperature}
               </div>
             </div>

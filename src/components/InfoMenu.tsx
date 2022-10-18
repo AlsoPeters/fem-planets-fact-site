@@ -14,7 +14,7 @@ export default function InfoMenu({
   console.log(colorConfig[planetName]?.color);
 
   return (
-    <div className='flex justify-between items-center px-6 py-4 border-b border-gray-dark font-spartan text-gray md:hidden'>
+    <div className='flex justify-between items-center px-6 py-4 border-b border-gray-dark font-spartan text-gray'>
       <div onClick={() => setMenu('overview')}>
         OVERVIEW
         <div
