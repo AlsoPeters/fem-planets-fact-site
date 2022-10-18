@@ -106,7 +106,7 @@ export default function mercury(props: Props): JSX.Element {
             />
           </div>
 
-          <div className='w-full flex flex-col gap-2 md:flex-row md:items-end'>
+          <div className='w-full flex flex-col gap-2 md:flex-row md:items-end lg:pb-0 pb-8'>
             <div className='md:flex-col md:items-start border-gray-dark flex justify-between items-center border-2 w-full py-2 px-4 text-sm'>
               <div className='font-spartan text-gray-dark font-bold text-xs'>
                 ROTATIONS TIME
