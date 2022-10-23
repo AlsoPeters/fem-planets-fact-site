@@ -15,7 +15,7 @@ export default function LargeInfoMenu({
   console.log(colorConfig[planetName]?.color);
 
   return (
-    <div className='flex-col w-[350px] ml-14 gap-4 hidden md:flex'>
+    <div className='flex-col w-[350px] ml-14 xl:ml-0 gap-4 hidden md:flex'>
       <div
         className={selected === 'overview' ? activeStyle : defaultStyle}
         onClick={() => setMenu('overview')}
