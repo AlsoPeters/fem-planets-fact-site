@@ -5,25 +5,31 @@ import Image from 'next/image';
 
 import InfoMenu from '../components/InfoMenu';
 import PlanetMenu from '../components/PlanetMenu';
-import Button from '../components/Button';
 import LargeInfoMenu from '../components/LargeInfoMenu';
+import PlanetDataMenu from '../components/PlanetDataMenu';
 
 export default function mercury(props: Props): JSX.Element {
   console.log(props);
 
   const planetName = props.planetData.name;
+  const planetDataMenu = props.planetData;
 
   return (
-    <div>
-      {/* InfoMenu will be hidden on screen sizes md(768px) and above  */}
-      <InfoMenu
-        planetName={planetName}
-        setMenu={props.setMenu}
-        selected={props.selected}
-      />
-      <PlanetMenu />
-      <div className='text-white gap-2 px-6 flex flex-col items-center'>
-        <div className='flex justify-center items-center h-80 md:h-auto md:py-8 w-full'>
+    // calculate height-screen minus height of nav
+    <div className='flex flex-col  h-[calc(100%_-_118px)]'>
+      <div className='md:hidden'>
+        <InfoMenu
+          planetName={planetName}
+          setMenu={props.setMenu}
+          selected={props.selected}
+        />
+      </div>
+
+      <div className='xl:hidden'>
+        <PlanetMenu />
+      </div>
+      <div className='flex flex-col items-center gap-2 px-6 text-white xl:flex-row'>
+        <div className='flex items-center justify-center w-full h-80 md:h-auto md:py-8 xl:py-0'>
           <div className='md:hidden'>
             <Image
               width={props.planetData.images.image_size}
@@ -63,7 +69,7 @@ export default function mercury(props: Props): JSX.Element {
                   alt='planet-geology'
                 />
               </div>
-              <div className='absolute -translate-x-20 -translate-y-16 hidden md:block'>
+              <div className='absolute hidden -translate-x-20 -translate-y-16 md:block'>
                 <Image
                   src={props.planetData.images.geology}
                   width={163}
@@ -75,20 +81,20 @@ export default function mercury(props: Props): JSX.Element {
             </div>
           ) : null}
         </div>
-        <div className='flex flex-col gap-20'>
-          <div className='flex'>
+        <div className='flex flex-col gap-20 xl:pt-48'>
+          <div className='flex xl:flex-col xl:items-center xl:gap-4'>
             <div className='text-center md:items-start md:flex md:flex-col md:w-1/2'>
-              <div className='font-antonio text-[40px]'>
+              <div className='font-antonio xl:text-[80px] text-[40px]'>
                 {props.planetData.name.toUpperCase()}
               </div>
-              <p className='font-spartan md:text-left text-center h-28 text-gray text-sm'>
+              <p className='text-sm text-center font-spartan md:text-left h-28 text-gray'>
                 {props.selectedInfoMenuItem === 'structure'
                   ? props.planetData.geology.content
                   : props.selectedInfoMenuItem === 'surface'
                   ? props.planetData.structure.content
                   : props.planetData.overview.content}
               </p>
-              <div className=''>
+              <div className='font-spartan'>
                 Source:{' '}
                 <a
                   target='_blank'
@@ -105,45 +111,14 @@ export default function mercury(props: Props): JSX.Element {
               selected={props.selected}
             />
           </div>
-
-          <div className='w-full flex flex-col gap-2 md:flex-row md:items-end lg:pb-0 pb-8'>
-            <div className='md:flex-col md:items-start border-gray-dark flex justify-between items-center border-2 w-full py-2 px-4 text-sm'>
-              <div className='font-spartan text-gray-dark font-bold text-xs'>
-                ROTATIONS TIME
-              </div>
-              <div className='font-antonio text-xl'>
-                {props.planetData.rotation}
-              </div>
-            </div>
-
-            <div className='border-gray-dark md:items-start md:flex-col flex justify-between items-center border-2 w-full py-2 px-4 text-sm'>
-              <div className='font-spartan text-gray-dark font-bold text-xs'>
-                REVOLUTION TIME
-              </div>
-              <div className='font-antonio text-xl'>
-                {props.planetData.revolution}
-              </div>
-            </div>
-
-            <div className='border-gray-dark md:items-start md:flex-col flex justify-between items-center border-2 w-full py-2 px-4 text-sm'>
-              <div className='font-spartan text-gray-dark font-bold text-xs'>
-                RADIUS
-              </div>
-              <div className='font-antonio text-xl'>
-                {props.planetData.radius}
-              </div>
-            </div>
-
-            <div className='border-gray-dark md:items-start md:flex-col flex justify-between items-center border-2 w-full py-2 px-4 text-sm'>
-              <div className='font-spartan text-gray-dark font-bold text-xs'>
-                AVERAGE TEMP.
-              </div>
-              <div className='font-antonio text-xl'>
-                {props.planetData.temperature}
-              </div>
-            </div>
+          <div className='xl:hidden'>
+            <PlanetDataMenu planetDataMenu={planetDataMenu} />
           </div>
         </div>
+      </div>
+      <div className='xl:flex-1'></div>
+      <div className='hidden xl:block xl:mb-20'>
+        <PlanetDataMenu planetDataMenu={planetDataMenu} />
       </div>
     </div>
   );
@@ -203,4 +178,5 @@ export interface Props {
   setMenu: React.Dispatch<React.SetStateAction<string>>;
   selected: string;
   planetName: string;
+  planetDataMenu: string;
 }

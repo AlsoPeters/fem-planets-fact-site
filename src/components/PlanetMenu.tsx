@@ -4,8 +4,8 @@ import Link from 'next/link';
 
 export default function PlanetMenu() {
   return (
-    <div className='border-b border-gray-dark hidden md:block'>
-      <div className='flex justify-between px-8 font-spartan text-sm py-8'>
+    <div className='hidden border-b border-gray-dark md:block xl:border-b-0'>
+      <div className='flex justify-between px-8 py-8 text-sm font-spartan xl:flex xl:gap-4'>
         {mobileMenuLinks.map((planets, index) => {
           return (
             <div key={index}>
