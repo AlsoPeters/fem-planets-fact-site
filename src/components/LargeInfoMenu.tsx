@@ -8,8 +8,8 @@ export default function LargeInfoMenu({
   planetName,
 }: InfoMenuProps): JSX.Element {
   const defaultStyle =
-    'border-2 border-gray-dark flex px-4 py-2 font-spartan text-gray gap-4 ';
-  const activeStyle = `border-2 gap-4 font-spartan ${colorConfig[planetName]?.color} flex px-4 py-2 text-white ${colorConfig[planetName]?.bg_color}`;
+    'border-2 border-gray-dark flex px-4 py-2 font-spartan text-gray gap-4 hover:bg-gray-dark hover:text-white cursor-pointer';
+  const activeStyle = `cursor-pointer border-2 gap-4 font-spartan ${colorConfig[planetName]?.color} flex px-4 py-2 text-white ${colorConfig[planetName]?.bg_color}`;
 
   console.log(planetName);
   console.log(colorConfig[planetName]?.color);

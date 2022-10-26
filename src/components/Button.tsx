@@ -17,7 +17,7 @@ export default function Button({ number, name }: ButtonProps) {
       onClick={() => setToggleActive(!toggleActive)}
       className={buttonStyle}
     >
-      <div className='text-gray px-8'>{number}</div>
+      <div className='text-gray px-8 hover:bg-gray'>{number}</div>
       <div className='text-white font-bold'>{name}</div>
     </button>
   );
