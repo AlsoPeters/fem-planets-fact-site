@@ -109,7 +109,7 @@ export default function mercury(props: Props): JSX.Element {
                 </a>
               </div>
             </div>
-            <div className="ml-auto">
+            <div className="m-auto">
               <LargeInfoMenu
                 planetName={planetName}
                 setMenu={props.setMenu}
