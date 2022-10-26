@@ -8,6 +8,9 @@ import PlanetMenu from '../components/PlanetMenu';
 import LargeInfoMenu from '../components/LargeInfoMenu';
 import PlanetDataMenu from '../components/PlanetDataMenu';
 
+import { BsFillArrowUpRightSquareFill } from 'react-icons/bs';
+import Link from 'next/link';
+
 export default function mercury(props: Props): JSX.Element {
   console.log(props);
 
@@ -81,7 +84,7 @@ export default function mercury(props: Props): JSX.Element {
             </div>
           ) : null}
         </div>
-        <div className='flex flex-col gap-20 xl:pt-48'>
+        <div className='flex flex-col xl:gap-20 gap-10 xl:pt-48 h-auto'>
           <div className='flex xl:flex-col xl:items-center xl:gap-4'>
             <div className='text-center md:items-start md:flex md:flex-col md:w-1/2'>
               <div className='font-antonio xl:text-[80px] text-[40px]'>
@@ -94,24 +97,30 @@ export default function mercury(props: Props): JSX.Element {
                   ? props.planetData.structure.content
                   : props.planetData.overview.content}
               </p>
-              <div className='font-spartan'>
-                Source:{' '}
+              <div className='flex gap-2 justify-center text-gray'>
+                <p>Source:</p>
                 <a
-                  target='_blank'
-                  rel='noreferrer'
                   href={props.planetData.overview.source}
+                  rel='noopener noreferrer'
+                  target='_blank'
+                  className='font-spartan'
                 >
-                  Wikipedia
+                  <span className='flex gap-2 items-center cursor-pointer'>
+                    <p className='underline'>Wikipedia </p>
+                    <BsFillArrowUpRightSquareFill />
+                  </span>
                 </a>
               </div>
             </div>
-            <LargeInfoMenu
-              planetName={planetName}
-              setMenu={props.setMenu}
-              selected={props.selected}
-            />
+            <div className='ml-auto'>
+              <LargeInfoMenu
+                planetName={planetName}
+                setMenu={props.setMenu}
+                selected={props.selected}
+              />
+            </div>
           </div>
-          <div className='xl:hidden'>
+          <div className='xl:hidden mt-auto'>
             <PlanetDataMenu planetDataMenu={planetDataMenu} />
           </div>
         </div>
