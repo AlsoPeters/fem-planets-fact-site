@@ -117,12 +117,12 @@ export default function mercury(props: Props): JSX.Element {
               />
             </div>
           </div>
-          <div className="xl:hidden mt-auto">
-            <PlanetDataMenu planetDataMenu={planetDataMenu} />
-          </div>
         </div>
       </div>
       <div className="xl:flex-1"></div>
+      <div className="xl:hidden mt-auto mx-8">
+        <PlanetDataMenu planetDataMenu={planetDataMenu} />
+      </div>
       <div className="hidden xl:block xl:mb-20">
         <PlanetDataMenu planetDataMenu={planetDataMenu} />
       </div>
